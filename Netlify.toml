@@ -1,11 +1,9 @@
 [build]
   publish = "public"
-  command = "npm install"
+  command = "cd netlify/functions && npm init -y && npm install @netlify/blobs && cd ../.."
 
 [functions]
   directory = "netlify/functions"
-  node_bundler = "esbuild"
-  included_files = ["package.json"]
 
 [build.environment]
   NODE_VERSION = "18"
