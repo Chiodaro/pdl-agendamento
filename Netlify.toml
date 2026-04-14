@@ -1,9 +1,10 @@
 [build]
   publish = "public"
-  command = "cd netlify/functions && npm init -y && npm install @netlify/blobs && cd ../.."
+  command = "npm install --package-lock-only && npm install"
 
 [functions]
   directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [build.environment]
   NODE_VERSION = "18"
